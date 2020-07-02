@@ -1,9 +1,18 @@
 export default {
     // Primary palette
-    primary: '#050505',
-    secondary: '#F7B801',
-    tertiary: '#FBFCFB',
-    quaternary: '#676767',
+    light: {
+        primary: '#050505',
+        secondary: '#F7B801',
+        tertiary: '#FBFCFB',
+        quaternary: '#676767',
+    },
+
+    dark: {
+        primary: '#F1F4EA',
+        secondary: '#F7B801',
+        tertiary: '#121212',
+        quaternary: '#C7C7C7',
+    },
 };
 
 export interface ColorsPropsBackground {
