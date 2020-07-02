@@ -28,6 +28,7 @@ export default createGlobalStyle`
     }
     body {
         line-height: 1;
+        background-color: ${({ theme }) => theme.colors.background.tertiary};
     }
     ol, ul {
         list-style: none;
