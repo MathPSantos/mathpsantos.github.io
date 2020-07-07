@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { ThemeProvider, DefaultTheme } from 'styled-components';
 
 import usePersistedState from '../hooks/usePersistedState';
@@ -13,11 +13,9 @@ export const ThemeContext = React.createContext<ThemeContext>(
 );
 
 export const ThemeContextProvider: React.FC = ({ children }) => {
-    const [theme, setTheme] = usePersistedState<DefaultTheme>('theme', LightTheme);
+    const [theme, setTheme] = usePersistedState<DefaultTheme>('theme', DarkTheme);
 
-    const toggleTheme = () => {
-        setTheme(theme === LightTheme ? DarkTheme : LightTheme);
-    };
+    const toggleTheme = () => setTheme(theme === LightTheme ? DarkTheme : LightTheme)
 
     return (
         <ThemeContext.Provider value={{ theme, toggleTheme }}>
