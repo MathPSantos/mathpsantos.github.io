@@ -1,6 +1,37 @@
 import { createGlobalStyle } from 'styled-components';
 
+import AvertaRegular from '../assets/fonts/Averta-Regular.otf';
+import OpenSansSemiBold from '../assets/fonts/OpenSans-SemiBold.ttf';
+import OpenSansBold from '../assets/fonts/OpenSans-Bold.ttf';
+
 export default createGlobalStyle`
+
+    @font-face {
+        font-family: 'Averta';
+        font-style: normal;
+        font-weight: 300;
+        src: url(${AvertaRegular});
+    };
+
+    @font-face {
+        font-family: 'Open Sans SemiBold';
+        font-style: normal;
+        font-weight: 300;
+        src: url(${OpenSansSemiBold});
+    };
+
+    @font-face {
+        font-family: 'Open Sans Bold';
+        font-style: normal;
+        font-weight: 400;
+        src: url(${OpenSansBold});
+    };
+
+    :root {
+        font-size: 16px;
+        font-family: ${({ theme }) => theme.fonts.averta};
+    };
+
     html, body, div, span, applet, object, iframe,
     h1, h2, h3, h4, h5, h6, p, blockquote, pre,
     a, abbr, acronym, address, big, cite, code,
@@ -20,29 +51,36 @@ export default createGlobalStyle`
         font-size: 100%;
         font: inherit;
         vertical-align: baseline;
-    }
+        transition: all .5s;
+    };
+
     /* HTML5 display-role reset for older browsers */
     article, aside, details, figcaption, figure, 
     footer, header, hgroup, menu, nav, section {
         display: block;
-    }
+    };
+
     body {
         line-height: 1;
         background-color: ${({ theme }) => theme.colors.background.tertiary};
-    }
+    };
+
     ol, ul {
         list-style: none;
-    }
+    };
+
     blockquote, q {
         quotes: none;
-    }
+    };
+
     blockquote:before, blockquote:after,
     q:before, q:after {
         content: '';
         content: none;
-    }
+    };
+
     table {
         border-collapse: collapse;
         border-spacing: 0;
-    }
+    };
 `; 
