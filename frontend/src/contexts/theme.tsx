@@ -15,7 +15,23 @@ export const ThemeContext = React.createContext<ThemeContext>(
 export const ThemeContextProvider: React.FC = ({ children }) => {
     const [theme, setTheme] = usePersistedState<DefaultTheme>('theme', DarkTheme);
 
+    // const changeMetaColor = (color: string) => {
+    //     var metaThemeColor = document.querySelector("meta[name=theme-color]");
+    //     metaThemeColor?.setAttribute("content", color);
+    // };
+
     const toggleTheme = () => setTheme(theme === LightTheme ? DarkTheme : LightTheme)
+
+    // useEffect(() => {
+    //     const storagedTheme = localStorage.getItem('theme');
+
+    //     if (storagedTheme) {
+    //         setTheme(JSON.parse(storagedTheme));
+    //         changeMetaColor(theme.colors.background.tertiary);
+    //     };
+
+    //     return;
+    // }, [theme])
 
     return (
         <ThemeContext.Provider value={{ theme, toggleTheme }}>
