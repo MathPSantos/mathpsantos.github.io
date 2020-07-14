@@ -1,9 +1,15 @@
-import React from 'react';
+import React from "react";
 
-// import { Container } from './styles';
+import { Header } from "../../components";
+
+import { Container } from "./styles";
 
 const Home: React.FC = () => {
-  return <div />;
-}
+  return (
+    <Container>
+      <Header />
+    </Container>
+  );
+};
 
 export default Home;
