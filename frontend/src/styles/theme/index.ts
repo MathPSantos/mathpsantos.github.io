@@ -8,6 +8,7 @@ import fonts from './fonts';
 import units from './units';
 
 export const LightTheme: DefaultTheme = {
+    title: "Light",
     colors: {
         background: {
             primary: colors.light.primary,
@@ -74,6 +75,7 @@ export const LightTheme: DefaultTheme = {
 };
 
 export const DarkTheme: DefaultTheme = {
+    title: "Dark",
     colors: {
         background: {
             primary: colors.dark.primary,
