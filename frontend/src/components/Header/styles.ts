@@ -2,13 +2,20 @@ import styled from "styled-components";
 
 import { NavLink } from "react-router-dom";
 
+import { FiChevronDown } from "../../styles/icons";
+
 interface BurguerProps {
   active: boolean;
   onClick: () => void;
 }
 
-interface LinksProps {
+interface LinkProps {
   active: boolean;
+}
+
+interface DropboxProps {
+  active: boolean;
+  onClick?: () => void;
 }
 
 export const Container = styled.div`
@@ -97,7 +104,7 @@ export const BurguerWrapper = styled.div<BurguerProps>`
   }
 `;
 
-export const LinksWrapper = styled.div<LinksProps>`
+export const LinksWrapper = styled.div<LinkProps>`
   width: 100%;
   height: 100vh;
 
@@ -142,7 +149,7 @@ export const NavLinks = styled.div`
 
   @media (min-width: 760px) {
     flex-direction: row;
-    width: 500px;
+    width: 620px;
 
     > a + a,
     > div,
@@ -167,7 +174,7 @@ export const Link = styled(NavLink)`
 
     width: 5px;
     height: 5px;
-    background: ${({ theme }) => theme.colors.text.secondary};
+    background: ${({ theme }) => theme.colors.background.secondary};
 
     display: none;
   }
@@ -181,14 +188,63 @@ export const Link = styled(NavLink)`
 
 export const Dropbox = styled.div`
   display: flex;
-  justify-content: flex-start;
-  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+
+  position: relative;
 
   > svg {
     margin-left: 4px;
   }
 `;
 
-export const CheveronIcon = styled.div`
-  
+export const LinkContainer = styled.div<DropboxProps>`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  cursor: pointer;
+
+  > svg {
+    margin-left: 4px;
+    transition: 0.2s all;
+    transform: ${({ active }) => (active ? "rotate(180deg)" : "rotate(0)")};
+  }
+`;
+
+export const CheveronIcon = styled(FiChevronDown)`
+  width: 16px;
+  height: 16px;
+  color: ${({ theme }) => theme.colors.text.primary};
+`;
+
+export const DropboxContent = styled.div<DropboxProps>`
+  width: 100px;
+  padding: 5px;
+  border: 1px solid ${({ theme }) => theme.colors.text.primary};
+  margin-top: 12px;
+
+  display: ${({ active }) => (active ? "flex" : "none")};
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+
+  transition: 0.5s all;
+
+  > a {
+    font-size: 16px;
+  }
+
+  > a + a {
+    margin-top: 8px;
+  }
+
+  @media (min-width: 760px) {
+    position: absolute;
+    left: 0;
+    top: 36px;
+
+    margin-top: 0;
+  }
 `;

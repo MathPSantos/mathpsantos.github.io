@@ -10,16 +10,24 @@ import {
   NavLinks,
   Link,
   Dropbox,
-  CheveronIcon
+  LinkContainer,
+  CheveronIcon,
+  DropboxContent
 } from "./styles";
 
 import DarkLogo from "../../assets/images/DarkLogo.png";
 
 const Header: React.FC = () => {
-  const [active, setActive] = useState(false);
+  const [active, setActive] = useState(true);
+  const [dropboxActive, setDropboxActive] = useState(false);
 
   const handleBurguer = () => {
     setActive(!active);
+  };
+
+  const handleDropbox = () => {
+    console.log('teste')
+    setDropboxActive(!dropboxActive);
   };
 
   return (
@@ -38,8 +46,15 @@ const Header: React.FC = () => {
           <NavLinks>
             <Link to="">About</Link>
             <Dropbox>
-              <Link to="">Work</Link>
-              <CheveronIcon />
+              <LinkContainer onClick={handleDropbox} active={dropboxActive}>
+                <Link to="">Work</Link>
+                <CheveronIcon />
+              </LinkContainer>
+              <DropboxContent active={dropboxActive}>
+                <Link to="">Portfolio</Link>
+                <Link to="">Articles</Link>
+                <Link to="">Videos</Link>
+              </DropboxContent>
             </Dropbox>
             <Link to="">Contact</Link>
             <Link to="">See my CV</Link>
