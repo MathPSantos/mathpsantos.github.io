@@ -14,6 +14,22 @@ interface LinksProps {
 export const Container = styled.div`
   width: 100%;
   position: relative;
+  display: flex;
+  justify-content: center;
+`;
+
+export const Nav = styled.nav`
+  width: 100%;
+  height: 100%;
+  max-width: 1280px;
+
+  position: relative;
+
+  @media (min-width: 760px) {
+    height: 90px;
+    display: flex;
+    align-items: center;
+  }
 `;
 
 export const NavBar = styled.div`
@@ -25,7 +41,14 @@ export const NavBar = styled.div`
   justify-content: space-between;
   align-items: center;
 
-  background: ${({ theme }) => theme.colors.background.tertiary};
+  @media (min-width: 760px) {
+    width: 100px;
+    height: 30px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
 `;
 
 export const Logo = styled.img`
@@ -68,6 +91,10 @@ export const BurguerWrapper = styled.div<BurguerProps>`
     transform: ${({ active }) =>
       active ? "translate(3px, -13px) rotate(-45deg)" : "translate(0)"};
   }
+
+  @media (min-width: 760px) {
+    display: none;
+  }
 `;
 
 export const LinksWrapper = styled.div<LinksProps>`
@@ -85,9 +112,16 @@ export const LinksWrapper = styled.div<LinksProps>`
   background: ${({ theme }) => theme.colors.background.tertiary};
   z-index: 0;
 
-  transform: ${({ active }) =>
-      active ? "translate(0)" : "translate(100%)"};
-    transition: 0.5s all;
+  transform: ${({ active }) => (active ? "translate(0)" : "translate(100%)")};
+  transition: 0.5s all;
+
+  @media (min-width: 760px) {
+    width: auto;
+    height: 30px;
+    position: relative;
+
+    transform: translate(0);
+  }
 `;
 
 export const NavLinks = styled.div`
@@ -100,8 +134,22 @@ export const NavLinks = styled.div`
   justify-content: center;
   align-items: flex-start;
 
-  > a + a {
+  > a + a,
+  > div,
+  > div + a {
     margin-top: 24px;
+  }
+
+  @media (min-width: 760px) {
+    flex-direction: row;
+    width: 500px;
+
+    > a + a,
+    > div,
+    > div + a {
+      margin-top: 0;
+      margin-left: 36px;
+    }
   }
 `;
 
@@ -129,4 +177,18 @@ export const Link = styled(NavLink)`
       display: block;
     }
   }
+`;
+
+export const Dropbox = styled.div`
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+
+  > svg {
+    margin-left: 4px;
+  }
+`;
+
+export const CheveronIcon = styled.div`
+  
 `;
