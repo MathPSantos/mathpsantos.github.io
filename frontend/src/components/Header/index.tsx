@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 
 import {
   Container,
@@ -15,26 +15,26 @@ import {
   DropboxContent
 } from "./styles";
 
+import { ThemeContext } from '../../contexts/theme';
+ 
 import DarkLogo from "../../assets/images/DarkLogo.png";
+import LightLogo from "../../assets/images/LightLogo.png";
 
 const Header: React.FC = () => {
-  const [active, setActive] = useState(true);
+  const { theme } = useContext(ThemeContext)
+
+  const [active, setActive] = useState(false);
   const [dropboxActive, setDropboxActive] = useState(false);
 
-  const handleBurguer = () => {
-    setActive(!active);
-  };
+  const handleBurguer = () => setActive(!active);
 
-  const handleDropbox = () => {
-    console.log('teste')
-    setDropboxActive(!dropboxActive);
-  };
+  const handleDropbox = () => setDropboxActive(!dropboxActive);
 
   return (
     <Container>
       <Nav>
         <NavBar>
-          <Logo src={DarkLogo} />
+          <Logo src={theme.title === 'Light' ? LightLogo : DarkLogo} />
 
           <BurguerWrapper onClick={handleBurguer} active={active}>
             <div />

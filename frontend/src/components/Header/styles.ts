@@ -221,7 +221,7 @@ export const CheveronIcon = styled(FiChevronDown)`
 
 export const DropboxContent = styled.div<DropboxProps>`
   width: 100px;
-  padding: 5px;
+  padding: 6px;
   border: 1px solid ${({ theme }) => theme.colors.text.primary};
   margin-top: 12px;
 
