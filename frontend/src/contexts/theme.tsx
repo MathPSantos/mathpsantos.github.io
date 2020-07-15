@@ -15,9 +15,7 @@ export const ThemeContext = React.createContext<ThemeContext>(
 export const ThemeContextProvider: React.FC = ({ children }) => {
     const [theme, setTheme] = usePersistedState<DefaultTheme>('theme', LightTheme);
 
-    const toggleTheme = () => {
-        setTheme(theme === LightTheme ? DarkTheme : LightTheme)
-    };
+    const toggleTheme = () => setTheme(theme.title === 'Light' ? DarkTheme : LightTheme)
 
     return (
         <ThemeContext.Provider value={{ theme, toggleTheme }}>
