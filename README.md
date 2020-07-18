@@ -37,7 +37,7 @@
 ---
 ## :rocket: Project Summary
 
-This is my portfolio, hope you like it and if you want [get in touch]()!
+This is my portfolio, hope you like it and if you want [get in touch](https://www.linkedin.com/in/mathpsantos/)!
  
 ---
 ## 👨‍💻️ Technologies Used
@@ -74,13 +74,13 @@ This project was developed using the technologies bellow:
   - [React Router DOM](https://reacttraining.com/react-router/)
   - [React Icons](https://react-icons.github.io/react-icons/)
   - [Axios](https://github.com/axios/axios)
-  - [Styled-components]()
-  - [Styled-icons]()
+  - [Styled-components](https://styled-components.com/)
+  - [Styled-icons](https://styled-icons.js.org/)
   
 ### Code patterns
 
   - [ESLint](https://eslint.org/)
-  - [Prettier]()
+  - [Prettier](https://prettier.io/)
 
 ### IDE
 
