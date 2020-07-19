@@ -29,10 +29,16 @@
 # Index
 
 - :rocket: [Project Summary](#rocket-project-summary)
+- 📐 [Wireframe](#%EF%B8%8F-wireframe)
 - 👨‍💻️ [Technologies Used](#%EF%B8%8F-technologies-used)
 - 📦️ [How to install the project](#%EF%B8%8F-how-to-install-the-project)
 - 🤔️ [How can you contribute?](#%EF%B8%8F-how-can-you-contribute)
 - 🔮 [Future Improvements](#-future-improvements)
+
+---
+## 📐 Wireframe
+
+I made the wireframe with [Figma](https://www.figma.com/) and you can see a little more at [here](https://www.figma.com/file/rc5W7M4gIarxbOsCEYuive/Website-Portfolio?node-id=0%3A1)!
 
 ---
 ## :rocket: Project Summary
